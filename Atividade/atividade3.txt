@@ -1,0 +1,32 @@
+﻿namespace Lista
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            List<int> L1 = new List<int> { 5, 2, 8 };
+            List<int> L2 = new List<int> { 1, 7, 3 };
+
+            List<int> L3 = new List<int>();
+
+            L3.AddRange(L1);
+            L3.AddRange(L2);
+
+            L3.Sort();
+
+            Console.WriteLine("Ordem crescente:");
+            foreach (int numero in L3)
+            {
+                Console.Write(numero + " ");
+            }
+
+            L3.Reverse();
+
+            Console.WriteLine("\n\nOrdem decrescente:");
+            foreach (int numero in L3)
+            {
+                Console.Write(numero + " ");
+            }
+        }
+    }
+}
