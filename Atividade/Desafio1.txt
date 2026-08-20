@@ -1,0 +1,96 @@
+﻿namespace Lista
+
+{
+
+    internal class Program
+
+    {
+
+        static void Main(string[] args)
+
+        {
+
+            List<int> numeros = new List<int>();
+
+            List<int> pares = new List<int>();
+
+            List<int> impares = new List<int>();
+
+
+            int n = 1;
+
+
+            while (n != 0)
+
+            {
+
+                Console.Write($"Número (0 para parar): ");
+
+                n = int.Parse(Console.ReadLine());
+
+
+                if (n != 0)
+
+                    numeros.Add(n);
+
+            }
+
+
+            foreach (int numero in numeros)
+
+            {
+
+                if (numero % 2 == 0)
+
+                    pares.Add(numero);
+
+                else
+
+                    impares.Add(numero);
+
+            }
+
+
+            pares.Sort();
+
+            impares.Sort();
+
+
+            Console.WriteLine($"\nPares:");
+
+            int soma = 0;
+
+            foreach (int numero in pares)
+
+            {
+
+                Console.Write($"{numero} ");
+
+                soma += numero;
+
+            }
+
+            Console.WriteLine($"\nSoma: {soma}");
+
+
+            Console.WriteLine($"\nÍmpares:");
+
+            soma = 0;
+
+            foreach (int numero in impares)
+
+            {
+
+                Console.Write($"{numero} ");
+
+                soma += numero;
+
+            }
+
+            Console.WriteLine($"\nSoma: {soma}");
+
+        }
+
+    }
+
+}
