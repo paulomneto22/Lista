@@ -1,0 +1,99 @@
+﻿namespace Lista
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            List<string> Interrogatorio = new List<string>();
+
+            int Sim = 0;
+
+            Console.WriteLine("Responda as perguntas para cooperar com a solução do crime (Digite sim ou não)");
+
+            Console.WriteLine("Você telefonou para a vítima?");
+            string Resposta1 = Console.ReadLine().Trim().ToLower();
+
+            if (Resposta1 == "sim")
+            {
+                Sim++;
+                Interrogatorio.Add(Resposta1);
+            }
+            else if (Resposta1 == "não")
+            {
+                Interrogatorio.Add(Resposta1);
+            }
+
+            Console.WriteLine("Você esteve no local do crime?");
+            string Resposta2 = Console.ReadLine().Trim().ToLower();
+
+            if (Resposta2 == "sim")
+            {
+                Sim++;
+                Interrogatorio.Add(Resposta2);
+            }
+
+            else if (Resposta2 == "não")
+            {
+                Interrogatorio.Add(Resposta2);
+            }
+
+            Console.WriteLine("Mora perto da vítima?");
+            string Resposta3 = Console.ReadLine().Trim().ToLower();
+
+            if (Resposta3 == "sim")
+            {
+                Sim++;
+                Interrogatorio.Add(Resposta3);
+            }
+            else if (Resposta3 == "não")
+            {
+                Interrogatorio.Add(Resposta3);
+            }
+
+            Console.WriteLine("Você devia a vítima?");
+            string Resposta4 = Console.ReadLine().Trim().ToLower();
+
+            if (Resposta4 == "sim")
+            {
+                Sim++;
+                Interrogatorio.Add(Resposta4);
+            }
+            else if (Resposta4 == "não")
+            {
+                Interrogatorio.Add(Resposta4);
+            }
+
+            Console.WriteLine("Você já trabalhou com a vítima?");
+            string Resposta5 = Console.ReadLine().Trim().ToLower();
+
+            if (Resposta5 == "sim")
+            {
+                Sim++;
+                Interrogatorio.Add(Resposta5);
+            }
+            else if (Resposta5 == "não")
+            {
+                Interrogatorio.Add(Resposta5);
+            }
+
+            if (Sim < 2)
+            {
+                Console.WriteLine("O interrogado é inocente!");
+            }
+            else if (Sim == 2)
+            {
+                Console.WriteLine("O interrogado é suspeito!");
+            }
+            else if (Sim >= 3 && Sim <= 4)
+            {
+                Console.WriteLine("O interrogado é um cúmplice!");
+            }
+            else if (Sim == 5)
+            {
+                Console.WriteLine("O interrogado é o assasino!");
+            }
+
+            Console.WriteLine("Todas as perguntas: " + string.Join(",", Interrogatorio));
+        }
+    }
+}
